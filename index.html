@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ButtonTest</title>
     <style>
+        body{
+            padding: 30px;
+        }
         button {
             padding: 20px;
         }
     </style>
 </head>
 <body>
-    <button onclick="window.get_app_main.onMyCamera">按鈕</button>
-    <input type="text" placeholder="LKK">
+    <div class="box">
+        <button onclick="window.get_app_main.onMyCamera">有window按鈕</button>
+        <input type="text" placeholder="LKK">
+    </div>
+    <div class="box">
+        <button onclick="get_app_main.onMyCamera">沒window按鈕</button>
+        <input type="text" placeholder="LKK">
+    </div>
     <script>
         
     </script>
