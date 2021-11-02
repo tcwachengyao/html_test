@@ -38,11 +38,16 @@
         function camera() {
             var aOnMyCamera = window.get_app_main.onMyCamera();
             var aBorCodeInpute = document.querySelector('.get_val');
-            if (aOnMyCamera) {
+            // if (aOnMyCamera) {
+            //     aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
+            // }
+            if (window.get_app_main.barcodeValue() == null) {
+                aBorCodeInpute.setAttribute("value", "123456");
+            } else {
                 aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
             }
         }
-
+        
         function test_alert () {
             alert('Alert Test block');
             // window.get_app_main.barcodeValue();
