@@ -22,8 +22,8 @@
 </head>
 <body>
     <div class="box">
-        <button onclick="window.get_app_main.onMyCamera()">有window按鈕</button>
-        <input type="text" placeholder="LKK">
+        <button onclick="camera()">有window按鈕</button>
+        <input class="get_val" type="text" placeholder="LKK">
     </div>
     <div class="box">
         <button onclick="test_alert()">alert測試按鈕</button>
@@ -35,9 +35,17 @@
     </div>
 
     <script>
+        function camera() {
+            var aOnMyCamera = window.get_app_main.onMyCamera();
+            var aBorCodeInpute = document.querySelector('.get_val');
+            if (aOnMyCamera) {
+                aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
+            }
+        }
+
         function test_alert () {
-            // alert('Alert Test block');
-            window.get_app_main.barcodeValue();
+            alert('Alert Test block');
+            // window.get_app_main.barcodeValue();
         }
     </script>
 </body>
