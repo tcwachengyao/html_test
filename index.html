@@ -37,15 +37,15 @@
     <script>
         function camera() {
             var aOnMyCamera = window.get_app_main.onMyCamera();
-            var aBorCodeInpute = document.querySelector('.get_val');
+            // var aBorCodeInpute = document.querySelector('.get_val');
             // if (aOnMyCamera) {
             //     aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
             // }
             var getBarCode = window.get_app_main.barcodeValue();
             if (getBarCode == null) {
-                aBorCodeInpute.setAttribute("value", "123456");
+                document.querySelector('.get_val').setAttribute("value", "123456");
             } else {
-                aBorCodeInpute.setAttribute("value", window.get_app_main.barcodeValue());
+                document.querySelector('.get_val').setAttribute("value", window.get_app_main.barcodeValue());
             }
         }
         
