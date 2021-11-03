@@ -23,7 +23,7 @@
 <body>
     <div class="box">
         <button onclick="camera()">有window按鈕</button>
-        <input class="get_val" type="text" placeholder="LKK" value="">
+        <input class="get_val" type="text" placeholder="LKK" value="123">
     </div>
     <div class="box">
         <button onclick="test_alert()">alert測試按鈕</button>
@@ -42,6 +42,7 @@
             //     aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
             // }
             var getBarCode = window.get_app_main.barcodeValue();
+            console.log(document.querySelector('.get_val').getAttribute("value"));
             if (getBarCode == null || getBarCode == '') {
                 document.querySelector('.get_val').setAttribute("value", "123456");
             } else {
