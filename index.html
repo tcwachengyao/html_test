@@ -21,6 +21,9 @@
     </style>
 </head>
 <body>
+    <div class="inn_test">
+
+    </div>
     <div class="box">
         <button onclick="camera()">有window按鈕</button>
         <input class="get_val" type="text" placeholder="LKK" value="123">
@@ -35,6 +38,7 @@
     </div>
 
     <script>
+        console.log(document.querySelector('.get_val').getAttribute("value"));
         function camera() {
             var aOnMyCamera = window.get_app_main.onMyCamera();
             // var aBorCodeInpute = document.querySelector('.get_val');
@@ -42,11 +46,12 @@
             //     aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
             // }
             var getBarCode = window.get_app_main.barcodeValue();
-            console.log(document.querySelector('.get_val').getAttribute("value"));
             if (getBarCode == null || getBarCode == '') {
                 document.querySelector('.get_val').setAttribute("value", "123456");
+                document.querySelector('.inn_test').innerHTML = 'null & 沒';
             } else {
                 document.querySelector('.get_val').setAttribute("value", window.get_app_main.barcodeValue());
+                document.querySelector('.inn_test').innerHTML = window.get_app_main.barcodeValue();
             }
         }
         
