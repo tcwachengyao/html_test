@@ -42,7 +42,7 @@
             //     aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
             // }
             var getBarCode = window.get_app_main.barcodeValue();
-            if (getBarCode == null) {
+            if (getBarCode == null || getBarCode == '') {
                 document.querySelector('.get_val').setAttribute("value", "123456");
             } else {
                 document.querySelector('.get_val').setAttribute("value", window.get_app_main.barcodeValue());
