@@ -47,7 +47,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>
-        console.log('web:console.log');
         // function camera() {
         //     window.get_app_main.onMyCamera();
         // }
@@ -64,13 +63,15 @@
             // window.get_app_main.barcodeValue();
         }
         $("#imgInp").change(function(){
-            //當檔案改變後，做一些事 
+            console.log('web-Change:' + this);
             readURL(this);   // this代表<input id="imgInp">
         });
         function readURL(input){
+            console.log('web-Input:' + input);
             if(input.files && input.files[0]){
                 var reader = new FileReader();
                 reader.onload = function (e) {
+                    console.log('web-attrSrc:' + e.target.result);
                     $("#show_img").attr('src', e.target.result);
                 }
                 reader.readAsDataURL(input.files[0]);
