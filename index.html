@@ -38,15 +38,15 @@
 
     <div class="box">
         <h6>檔案上傳</h6>
-        <input type="file" placeholder="selectTest">
+        <input type="file" placeholder="selectTest" id="imgInp">
         <div class="img_box">
-            <img src="" alt="">
+            <img id="show_img" src="#" alt="">
         </div>
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>
-        console.log(document.querySelector('.get_val').getAttribute("value"));
         function camera() {
             window.get_app_main.onMyCamera();
         }
@@ -61,6 +61,19 @@
         function test_alert () {
             alert('Alert Test block');
             // window.get_app_main.barcodeValue();
+        }
+        $("#imgInp").change(function(){
+            //當檔案改變後，做一些事 
+            readURL(this);   // this代表<input id="imgInp">
+        });
+        function readURL(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#show_img").attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
         }
     </script>
 </body>
