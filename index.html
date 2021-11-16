@@ -18,6 +18,9 @@
         h6 {
             margin: 2px;
         }
+        .img_box img{
+            width: 200px;
+        }
     </style>
 </head>
 <body>
@@ -25,8 +28,8 @@
 
     </div>
     <div class="box">
-        <button onclick="camera()">有window按鈕</button>
-        <input class="get_val" type="text" placeholder="LKK" value="123">
+        <button onclick="scan()">有window按鈕</button>
+        <input class="get_val" type="text" placeholder="Show Scan result" value="123">
     </div>
     <div class="box">
         <button onclick="test_alert()">alert測試按鈕</button>
@@ -35,24 +38,22 @@
     <div class="box">
         <h6>檔案上傳</h6>
         <input type="file" placeholder="selectTest">
+        <div class="img_box">
+            <img src="" alt="">
+        </div>
     </div>
 
+
     <script>
-        console.log(document.querySelector('.get_val').getAttribute("value"));
-        function camera() {
-            var aOnMyCamera = window.get_app_main.onMyCamera();
-            // var aBorCodeInpute = document.querySelector('.get_val');
-            // if (aOnMyCamera) {
-            //     aBorCodeInpute.setAttribute("value",window.get_app_main.barcodeValue());
-            // }
-            var getBarCode = window.get_app_main.barcodeValue();
-            if (getBarCode == null || getBarCode == '') {
-                document.querySelector('.get_val').setAttribute("value", "123456");
-                document.querySelector('.inn_test').innerHTML = 'null & 沒';
-            } else {
-                document.querySelector('.get_val').setAttribute("value", window.get_app_main.barcodeValue());
-                document.querySelector('.inn_test').innerHTML = window.get_app_main.barcodeValue();
-            }
+        function scan() {
+            fonix.scanJS();
+        }
+
+        function showScanResult() {
+            var scanResult = fonix.scanResult();
+            // (!scanResult) equal === null or === undefined
+            if(!scanResult)fonix.showToast("Nothing had been scanned");
+            else fonix.showToast(fonix.scanResult());
         }
         
         function test_alert () {
