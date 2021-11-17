@@ -74,6 +74,7 @@
                     console.log('web-attrSrc:' + e.target.result);
                     $("#show_img").attr('src', e.target.result);
                 }
+                console.log('web-Input_2:' + input.files[0]);
                 reader.readAsDataURL(input.files[0]);
             }
         }
