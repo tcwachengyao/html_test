@@ -47,9 +47,9 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>
-        // function camera() {
-        //     window.get_app_main.onMyCamera();
-        // }
+        function camera() {
+            window.webViewJava.onMyCamera();
+        }
         // var getBarCode = window.get_app_main.barcodeValue();
         // if (getBarCode == null || getBarCode == '') {
         //     document.querySelector('.get_val').setAttribute("value", "123456");
@@ -60,7 +60,6 @@
         // }
         function test_alert () {
             alert('Alert Test block');
-            // window.get_app_main.barcodeValue();
         }
         $("#imgInp").change(function(){
             console.log('web-Change:' + this);
