@@ -66,17 +66,17 @@
             // }
         }
 
-        if (camera()) {
-            var get_val = window.webViewJava.getBarcodeData();
-            if (get_val == 'ErrorCode' || get_val == '') {
-                alert('請重新掃描');
-            } else {
-                var getVal = confirm('確認內容' + get_val);
-                if (getVal) {
-                    $('.get_val').val(window.webViewJava.getBarcodeData());
-                }
-            }
-        }
+        // if (camera()) {
+        //     var get_val = window.webViewJava.getBarcodeData();
+        //     if (get_val == 'ErrorCode' || get_val == '') {
+        //         alert('請重新掃描');
+        //     } else {
+        //         var getVal = confirm('確認內容' + get_val);
+        //         if (getVal) {
+        //             $('.get_val').val(window.webViewJava.getBarcodeData());
+        //         }
+        //     }
+        // }
         function test() {
             console.log('getBarcodeData():' + window.webViewJava.getBarcodeData());
             alert(window.webViewJava.getBarcodeData());
