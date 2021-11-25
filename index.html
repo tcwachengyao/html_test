@@ -51,9 +51,11 @@
     <script>
         function camera() {
             window.webViewJava.onMyCamera();
+            var get_val = window.webViewJava.getBarcodeData();
+            document.querySelector('.get_val').setAttribute("value", get_val);
         }
-        var test_ipt = document.querySelector('.get_val');
-        
+        // var test_ipt = document.querySelector('.get_val');
+
         function test() {
             console.log('getBarcodeData():' + window.webViewJava.getBarcodeData());
         }
