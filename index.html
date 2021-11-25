@@ -63,6 +63,7 @@
         function test() {
             console.log('getBarcodeData():' + window.webViewJava.getBarcodeData());
             alert(window.webViewJava.getBarcodeData());
+            $('.get_val').val(window.webViewJava.getBarcodeData());
         }
         // var getBarCode = window.get_app_main.barcodeValue();
         // if (getBarCode == null || getBarCode == '') {
