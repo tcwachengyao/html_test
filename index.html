@@ -52,10 +52,9 @@
         function camera() {
             window.webViewJava.onMyCamera();
             var get_val = window.webViewJava.getBarcodeData();
-            if (get_val == 'ErrorCode' || get_val == '') {
-                alert('請重新掃描');
-            } else {
-                $('.get_val').val(get_val);
+            var getVal = confirm('確認內容' + get_val);
+            if (getVal) {
+                $('.get_val').val(window.webViewJava.getBarcodeData());
             }
         }
         // var test_ipt = document.querySelector('.get_val');
