@@ -52,12 +52,17 @@
         function camera() {
             window.webViewJava.onMyCamera();
             var get_val = window.webViewJava.getBarcodeData();
-            document.querySelector('.get_val').setAttribute("value", get_val);
+            if (get_val == 'ErrorCode' || get_val == '') {
+                alert('請重新掃描');
+            } else {
+                $('.get_val').val(get_val);
+            }
         }
         // var test_ipt = document.querySelector('.get_val');
 
         function test() {
             console.log('getBarcodeData():' + window.webViewJava.getBarcodeData());
+            alert(window.webViewJava.getBarcodeData());
         }
         // var getBarCode = window.get_app_main.barcodeValue();
         // if (getBarCode == null || getBarCode == '') {
