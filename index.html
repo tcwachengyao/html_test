@@ -50,27 +50,39 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>
         function camera() {
-            if(window.webViewJava.onMyCamera()) {
-                var get_val = window.webViewJava.getBarcodeData();
-                if (get_val == 'ErrorCode' || get_val == '') {
-                    alert('請重新掃描');
-                } else {
-                    var getVal = confirm('確認內容' + get_val);
-                    if (getVal) {
-                        $('.get_val').val(window.webViewJava.getBarcodeData());
-                    }
-                }
-            } else {
+            window.webViewJava.onMyCamera()
+            // if(window.webViewJava.onMyCamera()) {
+            //     var get_val = window.webViewJava.getBarcodeData();
+            //     if (get_val == 'ErrorCode' || get_val == '') {
+            //         alert('請重新掃描');
+            //     } else {
+            //         var getVal = confirm('確認內容' + get_val);
+            //         if (getVal) {
+            //             $('.get_val').val(window.webViewJava.getBarcodeData());
+            //         }
+            //     }
+            // } else {
+            //     alert('請重新掃描');
+            // }
+        }
+
+        if (camera()) {
+            var get_val = window.webViewJava.getBarcodeData();
+            if (get_val == 'ErrorCode' || get_val == '') {
                 alert('請重新掃描');
+            } else {
+                var getVal = confirm('確認內容' + get_val);
+                if (getVal) {
+                    $('.get_val').val(window.webViewJava.getBarcodeData());
+                }
             }
         }
-        // var test_ipt = document.querySelector('.get_val');
-
         function test() {
             console.log('getBarcodeData():' + window.webViewJava.getBarcodeData());
             alert(window.webViewJava.getBarcodeData());
             $('.get_val').val(window.webViewJava.getBarcodeData());
         }
+
         // var getBarCode = window.get_app_main.barcodeValue();
         // if (getBarCode == null || getBarCode == '') {
         //     document.querySelector('.get_val').setAttribute("value", "123456");
@@ -79,6 +91,9 @@
         //     document.querySelector('.get_val').setAttribute("value", window.get_app_main.barcodeValue());
         //     document.querySelector('.inn_test').innerHTML = window.get_app_main.barcodeValue();
         // }
+
+
+
         function test_alert () {
             alert('Alert Test block');
         }
