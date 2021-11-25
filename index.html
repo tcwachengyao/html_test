@@ -50,11 +50,18 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>
         function camera() {
-            window.webViewJava.onMyCamera();
-            var get_val = window.webViewJava.getBarcodeData();
-            var getVal = confirm('確認內容' + get_val);
-            if (getVal) {
-                $('.get_val').val(window.webViewJava.getBarcodeData());
+            if(window.webViewJava.onMyCamera()) {
+                var get_val = window.webViewJava.getBarcodeData();
+                if (get_val == 'ErrorCode' || get_val == '') {
+                    alert('請重新掃描');
+                } else {
+                    var getVal = confirm('確認內容' + get_val);
+                    if (getVal) {
+                        $('.get_val').val(window.webViewJava.getBarcodeData());
+                    }
+                }
+            } else {
+                alert('請重新掃描');
             }
         }
         // var test_ipt = document.querySelector('.get_val');
