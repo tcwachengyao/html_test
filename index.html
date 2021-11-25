@@ -30,6 +30,8 @@
     <div class="box">
         <button onclick="camera()">有window按鈕</button>
         <input class="get_val" type="text" placeholder="Show Scan result" value="123">
+
+        <button onclick="test()">getValue</button>
     </div>
     <div class="box">
         <button onclick="test_alert()">alert測試按鈕</button>
@@ -51,7 +53,8 @@
             window.webViewJava.onMyCamera();
         }
         var test_ipt = document.querySelector('.get_val');
-        test_ipt.onclik = function () {
+        
+        function test() {
             console.log('getBarcodeData():' + window.webViewJava.getBarcodeData());
         }
         // var getBarCode = window.get_app_main.barcodeValue();
